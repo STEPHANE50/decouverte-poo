@@ -5,7 +5,7 @@ public class Personne {
 	private String prenom;
 	private String nom;
 	private int age;
-	private String adresse;
+	private Adresse adresse = null;
 	private boolean femme;
 
 	public Personne(String prenom, String nom, int age) {
@@ -13,6 +13,14 @@ public class Personne {
 		this.prenom = prenom;
 		this.nom = nom;
 		this.age = age;
+	}
+	
+	public Personne(String prenom, String nom, int age, Adresse adresse) {
+		super();
+		this.prenom = prenom;
+		this.nom = nom;
+		this.age = age;
+		this.adresse = adresse;
 	}
 
 	public void declineToIdentite() {
@@ -27,11 +35,10 @@ public class Personne {
 				+ " printemps !");
 	}
 
-	public void demenage(String adresse) {
+	public void demenage(Adresse adresse) {
 		System.out.println("Je déménage de " + this.adresse + " vers "
 				+ adresse);
 		this.setAdresse(adresse);
-		this.adresse = adresse;
 	}
 
 	public String getPrenom() {
@@ -50,11 +57,11 @@ public class Personne {
 		return age;
 	}
 
-	public String getAdresse() {
-		return adresse;
+	public Adresse getAdresse() {
+		return this.adresse;
 	}
 
-	public void setAdresse(String adresse) {
+	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
 	}
 
