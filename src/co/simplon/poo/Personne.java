@@ -15,6 +15,25 @@ public class Personne {
 		this.age = age;
 	}
 
+	public void declineToIdentite() {
+		System.out.println("Je suis " + this.prenom + " " + this.nom);
+		if (adresse != null)
+			System.out.println("J'habite à " + this.adresse);
+	}
+
+	public void feteTonAnniversaire() {
+		this.age++;
+		System.out.println(prenom + " " + nom + " fête ses " + this.age
+				+ " printemps !");
+	}
+
+	public void demenage(String adresse) {
+		System.out.println("Je déménage de " + this.adresse + " vers "
+				+ adresse);
+		this.setAdresse(adresse);
+		this.adresse = adresse;
+	}
+
 	public String getPrenom() {
 		return prenom;
 	}
@@ -52,7 +71,5 @@ public class Personne {
 		return "Personne [prenom=" + prenom + ", nom=" + nom + ", age=" + age
 				+ ", adresse=" + adresse + ", femme=" + femme + "]";
 	}
-	
-	
-	
+
 }

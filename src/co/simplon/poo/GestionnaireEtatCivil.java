@@ -6,12 +6,20 @@ public class GestionnaireEtatCivil {
 	
 		// Créer une personne ... qui vous ressemble
 		Personne eric = new Personne("Eric", "Siber", 35);
-		System.out.print(eric);
+		eric.declineToIdentite();
 		
 		// La modifier / enrichir
-		eric.setPrenom("Eric, Pierre");
+		eric.setPrenom("Clément");
 		eric.setFemme(false);
 		eric.setAdresse("Sartrouville");
+		
+		// joyeux anniversaire
+		eric.feteTonAnniversaire();
 		System.out.println(eric);
+		
+		// déménagement
+		eric.demenage("Montreuil");
+		eric.declineToIdentite();
+		
 	}
 }
