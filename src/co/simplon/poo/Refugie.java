@@ -14,9 +14,9 @@ public class Refugie extends Personne {
 	}
 
 	public boolean demanderAsile(Adresse adresse) {
-		if (dateLimiteSejour.after(new Date())) {
+		if (this.dateLimiteSejour.after(new Date())) {
 			this.regularise = true;
-			this.setAdresse(adresse);
+			this.adresse = adresse;
 			return true;
 		}
 		return false;
@@ -24,7 +24,7 @@ public class Refugie extends Personne {
 
 	@Override
 	public void declineToIdentite() {
-		System.out.println("Je suis " + this.getPrenom() + " " + this.getNom());
+		System.out.println("Je suis " + this.prenom + " " + this.nom);
 		if (this.regularise) {
 			System.out.println("Je suis un réfugié régularisé vivant à " + this.getAdresse().getVille());
 		} else {
@@ -35,23 +35,23 @@ public class Refugie extends Personne {
 	@Override
 	public void demenage(Adresse adresse) {
 		if (this.regularise) {
-			if (adresse.getCodePostal() == this.getAdresse().getCodePostal()
-					&& adresse.getVille().equals(this.getAdresse().getVille())) {
+			if (adresse.getCodePostal() == this.adresse.getCodePostal()
+					&& adresse.getVille().equals(this.adresse.getVille())) {
 				super.demenage(adresse);
 			} else {
 				System.out
 						.println("Le réfugié "
-								+ this.getPrenom()
+								+ this.prenom
 								+ " "
-								+ this.getNom()
+								+ this.nom
 								+ "ne peut déménager en dehors de sa ville de résidence actuelle");
 			}
 		} else {
 			System.out
 					.println("Le réfugié "
-							+ this.getPrenom()
+							+ this.prenom
 							+ " "
-							+ this.getNom()
+							+ this.nom
 							+ " ne peut définir d'adresse tant qu'il n'est pas régularisé.");
 		}
 	}

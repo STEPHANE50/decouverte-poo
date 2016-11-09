@@ -2,11 +2,11 @@ package co.simplon.poo;
 
 public class Personne {
 
-	private String prenom;
-	private String nom;
-	private int age;
-	private Adresse adresse = null;
-	private boolean femme;
+	protected String prenom;
+	protected String nom;
+	protected int age;
+	protected Adresse adresse = null;
+	protected boolean femme;
 
 	public Personne(String prenom, String nom, int age) {
 		super();
